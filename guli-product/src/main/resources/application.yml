@@ -3,12 +3,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: biubiu123
-    url: jdbc:mysql://36.134.145.235:3306/guli_pms
+    url: jdbc:mysql://121.4.117.147/guli_pms
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:
     db-config:
-      id-type: auto #配置全局主键自增
+      id-type: auto #配置全局主键自增，也可在主键的entity上自己配置注解
 server:
   port: 10000

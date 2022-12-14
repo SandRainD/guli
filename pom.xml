@@ -14,7 +14,7 @@
         <module>guli-member</module>
         <module>guli-coupon</module>
         <module>guli-product</module>
-        <module>renren-fast</module>
+        <module>renren-fast-master</module>
         <module>renren-generator</module>
         <module>guli-common</module>
     </modules>

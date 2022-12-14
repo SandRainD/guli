@@ -4,11 +4,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import com.idea.guli.coupon.entity.CouponEntity;
 import com.idea.guli.coupon.service.CouponService;
@@ -24,12 +21,21 @@ import com.idea.common.utils.R;
  * @email j2568095536@gmail.com
  * @date 2022-10-09 17:10:54
  */
-@RestController
+@Controller
+@ResponseBody
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
-    private CouponService couponService;
+    public CouponService couponService;
 
+
+
+    @RequestMapping("/member/list")
+    public R membercoupons(){
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("满100-10");
+        return R.ok().put("coupons", Arrays.asList(couponEntity));
+    }
     /**
      * 列表
      */

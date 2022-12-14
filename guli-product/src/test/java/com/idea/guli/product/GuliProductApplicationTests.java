@@ -13,11 +13,21 @@ public class GuliProductApplicationTests {
     @Test
     void contextLoads() {
         BrandEntity brandEntity = new BrandEntity();
-        brandEntity.setDescript("");
+        brandEntity.setDescript("mi");
         brandEntity.setName("小米");
 
         brandService.save(brandEntity);
         System.out.println("do save success");
     }
+    @Test
+    void contextLoads1() {
+        BrandEntity brandEntity = new BrandEntity();
+        brandEntity.setBrandId(1L);
+        brandEntity.setDescript("miser");
+        brandService.updateById(brandEntity);
+        System.out.println("do update success");
+    }
+
+
 
 }
